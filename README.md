@@ -63,3 +63,8 @@ As with the python example, if you get a java.net.UnknownHostException when star
 SPARK_LOCAL_IP=127.0.0.1 SBT_OPTS=-Xmx2048m ipython notebook --profile scala
 ```
 
+### Plotting
+
+As of Late-October 2014, IScala has added ploting and rich text output. if you build IScala from source you can have these in your notebooks. There's a Display.ipynb in the IScala project that demonstrates this. Just a note on biulding IScala from source for Spark using SBT:
+
+- IScala cross builds against Scala 2.10 and 2.11. Spark is currently on Scala 2.10. To build the correct IScala jar run: `sbt + assembly`. The correct IScala jar will then be in _IScala/target/scala-2.10/lib/IScala.jar_.
