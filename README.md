@@ -31,21 +31,21 @@ SPARK_LOCAL_IP=127.0.0.1 IPYTHON=1 IPYTHON_OPTS="notebook --pylab inline" pyspar
 To run the scala notebook, you will need to:
 
 1. Create a Scala profile for ipython
-```bash
-ipython profile create scala
-```
+    ```bash
+    ipython profile create scala
+    ```
     The output from this command will tell you the location of the _ipython_config.py_ file. You will need to edit that file soon.  
 2. Download [IScala.jar](https://github.com/mattpap/IScala/releases). You will need to stash it somewhere. I put it in `~/.ipython/profile_scala/lib`
 3. Edit your _ipython_config.py_ to tell ipython about IScala
-```python
-c = get_config()
-
-c.KernelManager.kernel_cmd = ["java", "-jar",
+    ```python
+    c = get_config()
+    
+    c.KernelManager.kernel_cmd = ["java", "-jar",
                               "/User/yournamehere/.ipython/profile_scala/lib/IScala.jar",
                               "--profile",
                               "{connection_file}",
                               "--parent"]
-```
+    ```
 
 At this point you can start up IScala
 ```bash
