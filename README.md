@@ -52,7 +52,7 @@ At this point you can start up IScala
 ipython notebook --profile scala
 ```
 
-If you are running your notebook and it crashes with OutOfMemoryErrors you can increase the amount of memory used with the `-Xms` flag (e.g. -Xmx2g or -Xmx2048m will both allocate 2GB of memory for the JVM to use):
+If you are running your notebook and it crashes with OutOfMemoryErrors you can increase the amount of memory used with the `-Xmx` flag (e.g. -Xmx2g or -Xmx2048m will both allocate 2GB of memory for the JVM to use):
 ```bash
 SBT_OPTS=-Xmx2048m ipython notebook --profile scala
 ```
