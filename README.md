@@ -1,3 +1,4 @@
+
 # sparknotebook
 
 This project contains samples of ipython notebooks running [Spark](https://spark.apache.org/). One notebook, _2-Text-Analytics.ipynb_ is written in python. The second, _Scala-2-Text-Analytics.ipynb_ is in Scala. The dataset and the most excellent _2-Text-Analytics.ipynb_ are originally from [https://github.com/xsankar/cloaked-ironman](https://github.com/xsankar/cloaked-ironman).
@@ -33,8 +34,8 @@ To run the scala notebook, you will need to:
 ```bash
 ipython profile create scala
 ```
-The output from this command will tell you the location of the _ipython_config.py_ file. You will need to edit that file soon.
-2. Download [IScala.jar](https://github.com/mattpap/IScala/releases). You will need to stash it somewhere. I put it in `~/.ipython/profile_scala/lib`
+The output from this command will tell you the location of the _ipython_config.py_ file. You will need to edit that file soon.  
+2. Download [IScala.jar](https://github.com/mattpap/IScala/releases). You will need to stash it somewhere. I put it in `~/.ipython/profile_scala/lib`  
 3. Edit your _ipython_config.py_ to tell ipython about IScala
 ```python
 c = get_config()
@@ -45,11 +46,13 @@ c.KernelManager.kernel_cmd = ["java", "-jar",
                               "{connection_file}",
                               "--parent"]
 ```
-4. Start up IScala
+
+At this point you can start up IScala
 ```bash
 ipython notebook --profile scala
 ```
-or if you run into OutOfMemoryErrors:
+
+If you are running your notebook and it crashes with OutOfMemoryErrors you can increase the amount of memory used with the `-Xms` flag (e.g. -Xmx2g or -Xmx2048m will both allocate 2GB of memory for the JVM to use):
 ```bash
 SBT_OPTS=-Xmx2048m ipython notebook --profile scala
 ```
