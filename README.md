@@ -57,3 +57,9 @@ If you are running your notebook and it crashes with OutOfMemoryErrors you can i
 SBT_OPTS=-Xmx2048m ipython notebook --profile scala
 ```
 
+As with the python example, if you get a java.net.UnknownHostException when starting ipython use the following command:
+
+```bash
+SPARK_LOCAL_IP=127.0.0.1 SBT_OPTS=-Xmx2048m ipython notebook --profile scala
+```
+
