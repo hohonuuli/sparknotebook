@@ -21,7 +21,7 @@ IPYTHON=1 IPYTHON_OPTS="notebook --pylab inline" pyspark
 
 __NOTE__: Sometimes when running Spark on Java 7 you may get a java.net.UnknownHostException. I have not yet seen this on Java 8. If this happens to you, you can resolve it by setting the __SPARK_LOCAL_IP__ environment variable to `127.0.0.1` before launching Spark. For example:
 
-```
+```bash
 SPARK_LOCAL_IP=127.0.0.1 IPYTHON=1 IPYTHON_OPTS="notebook --pylab inline" pyspark
 ```
 
@@ -29,19 +29,14 @@ SPARK_LOCAL_IP=127.0.0.1 IPYTHON=1 IPYTHON_OPTS="notebook --pylab inline" pyspar
 
 To run the scala notebook, you will need to:
 
-### Create a Scala profile for ipython
-
+1. Create a Scala profile for ipython
 ```bash
 ipython profile create scala
 ```
-
 The output from this command will tell you the location of the _ipython_config.py_ file. You will need to edit that file soon.
-
-### Download [IScala.jar](https://github.com/mattpap/IScala/releases).
+2. Download [IScala.jar](https://github.com/mattpap/IScala/releases).
 You will need to stash it somewhere. I put it in `~/.ipython/profile_scala/lib`
-
-### Edit your _ipython_config.py_ to tell ipython about IScala
-
+3. Edit your _ipython_config.py_ to tell ipython about IScala
 ```python
 c = get_config()
 
@@ -51,12 +46,12 @@ c.KernelManager.kernel_cmd = ["java", "-jar",
                               "{connection_file}",
                               "--parent"]
 ```
-
-### Start up IScala 
-
-`ipython notebook --profile scala`
-
+4. Start up IScala
+```bash
+ipython notebook --profile scala
+```
 or if you run into OutOfMemoryErrors:
-
-`SBT_OPTS=-Xmx2048m ipython notebook --profile scala`
+```bash
+SBT_OPTS=-Xmx2048m ipython notebook --profile scala
+```
 
