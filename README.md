@@ -34,8 +34,7 @@ To run the scala notebook, you will need to:
 ipython profile create scala
 ```
 The output from this command will tell you the location of the _ipython_config.py_ file. You will need to edit that file soon.
-2. Download [IScala.jar](https://github.com/mattpap/IScala/releases).
-You will need to stash it somewhere. I put it in `~/.ipython/profile_scala/lib`
+2. Download [IScala.jar](https://github.com/mattpap/IScala/releases). You will need to stash it somewhere. I put it in `~/.ipython/profile_scala/lib`
 3. Edit your _ipython_config.py_ to tell ipython about IScala
 ```python
 c = get_config()
