@@ -31,7 +31,7 @@ SPARK_LOCAL_IP=127.0.0.1 IPYTHON=1 IPYTHON_OPTS="notebook --pylab inline" pyspar
 To run the scala notebook, you will need to:
 
 1. Create a Scala profile for ipython
-    ```bash
+    ```
     ipython profile create scala
     ```
     The output from this command will tell you the location of the _ipython_config.py_ file. You will need to edit that file soon.  
@@ -62,6 +62,8 @@ As with the python example, if you get a java.net.UnknownHostException when star
 ```bash
 SPARK_LOCAL_IP=127.0.0.1 SBT_OPTS=-Xmx2048m ipython notebook --profile scala
 ```
+
+__NOTE:__ For the Scala notebook, you do __not__ need to download and install Spark. The Spark dependencies are managed via sbt which is running under the hood in the Spark notebook.
 
 ### Plotting
 
