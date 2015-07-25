@@ -35,20 +35,20 @@ SPARK_LOCAL_IP=127.0.0.1 IPYTHON=1 IPYTHON_OPTS="notebook --pylab inline" pyspar
 To run the scala notebook, you will need to:
 
 1. Install [jupyter-scala](https://github.com/alexarchambault/jupyter-scala)
-    ```
-    git clone https://github.com/alexarchambault/jupyter-scala.git
-    cd jupyter-scala
-    sbt cli/packArchive
-    sbt publishM2
-    # unpack cli/target/jupyter-scala_2.11.6-0.2.0-SNAPSHOT.zip
-    cd cli/target/jupyter-scala_2.11.6-0.2.0-SNAPSHOT/bin
-    ./jupyter-scala
-    ```
+```
+git clone https://github.com/alexarchambault/jupyter-scala.git
+cd jupyter-scala
+sbt cli/packArchive
+sbt publishM2
+# unpack cli/target/jupyter-scala_2.11.6-0.2.0-SNAPSHOT.zip
+cd cli/target/jupyter-scala_2.11.6-0.2.0-SNAPSHOT/bin
+./jupyter-scala
+```
 2. Start jupyter (formerly ipython)
-    ```
-    ipython notebook
-    # When the notebook starts you may need to select the "Scala 2.11" kernel
-    ```
+```
+ipython notebook
+# When the notebook starts you may need to select the "Scala 2.11" kernel
+```
 
 If you are running your notebook and it crashes with OutOfMemoryErrors you can increase the amount of memory used with the `-Xmx` flag (e.g. -Xmx2g or -Xmx2048m will both allocate 2GB of memory for the JVM to use):
 ```bash
